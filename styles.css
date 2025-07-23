@@ -106,13 +106,16 @@ nav a:hover {
     justify-content: center;
     align-items: center;
     margin-bottom: 16px;
+    max-width: none;
 }
 .search-bar {
+    width: 100%;
     display: flex;
     align-items: center;
     background: rgba(0, 0, 0, 0.90);
     border-radius: 8px;
     box-shadow: 0 2px 12px rgba(0,255,65,0.10);
+    padding: 8px 16px;
 }
 .search-input {
     font-size: 1.1rem;
@@ -123,15 +126,4 @@ nav a:hover {
     background: #222;
     color: #00ff41;
     width: 100%;
-}
-.search-btn {
-    background: none;
-    border: none;
-    color: #00ff41;
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: color 0.2s;
-}
-.search-btn:hover {
-    color: #007f0e;
 }
