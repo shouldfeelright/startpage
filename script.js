@@ -10,19 +10,24 @@ function startMatrixRain() {
     canvas.height = window.innerHeight;
 
     const letters = 'アァイィウヴエェオカガキギクグケゲコゴサザシジスズセゼソゾタダチッヂヅテデトドナニヌネノハバパヒビピフブプヘベペホボポマミムメモヤユヨラリルレロワヲンABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    const fontSize = 14; // smaller font size for higher density
+    const fontSize = 14;
     const columns = Math.floor(canvas.width / fontSize);
     // Randomize initial drop positions for each column
     const drops = Array.from({length: columns}, () => Math.floor(Math.random() * canvas.height / fontSize));
+    const trailLength = Math.floor(canvas.height / fontSize / 2); // longer trail
 
     function draw() {
-        ctx.fillStyle = 'rgba(15, 15, 15, 0.6)';
+        ctx.fillStyle = 'rgba(15, 15, 15, 0.2)'; // less opaque for longer trails
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         ctx.font = fontSize + 'px Courier New';
-        ctx.fillStyle = '#00ff41';
         for (let i = 0; i < drops.length; i++) {
-            const text = letters[Math.floor(Math.random() * letters.length)];
-            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+            for (let j = 0; j < trailLength; j++) {
+                const text = letters[Math.floor(Math.random() * letters.length)];
+                let y = (drops[i] - j) * fontSize;
+                if (y < 0) continue;
+                ctx.fillStyle = j === 0 ? '#bfff00' : `rgba(0,255,65,${1 - j / trailLength})`;
+                ctx.fillText(text, i * fontSize, y);
+            }
             if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
                 drops[i] = 0;
             }
