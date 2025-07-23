@@ -88,7 +88,15 @@ nav a:hover {
 }
 .github-link {
     color: #00ff41;
-    font-size: 1.75rem;
     text-decoration: none;
     transition: opacity 0.2s;
+}
+.github-link .bi-github {
+    font-size: 2rem;
+    color: #00ff41;
+    transition: color 0.2s, filter 0.2s;
+}
+.github-link .bi-github:hover {
+    color: #00ff41;
+    filter: brightness(0.6);
 }
