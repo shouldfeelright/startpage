@@ -13,7 +13,7 @@ body {
     max-width: 500px;
     margin: 0;
     background: rgba(0, 0, 0, 0.90);
-    padding: 32px;
+    padding: 16px;
     border-radius: 12px;
     box-shadow: 0 2px 12px rgba(0,255,65,0.15);
     text-align: center;
@@ -115,7 +115,6 @@ nav a:hover {
     background: rgba(0, 0, 0, 0.90);
     border-radius: 8px;
     box-shadow: 0 2px 12px rgba(0,255,65,0.10);
-    padding: 8px 16px;
 }
 .search-input {
     font-size: 1.1rem;
