@@ -77,3 +77,18 @@ nav a:hover {
     vertical-align: middle;
     margin-bottom: 8px;
 }
+.footer {
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 12px;
+    z-index: 2;
+    opacity: 0.5;
+}
+.github-link {
+    color: #00ff41;
+    font-size: 1.75rem;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
