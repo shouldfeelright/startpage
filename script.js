@@ -1,5 +1,15 @@
-// Matrix rain effect
-window.addEventListener('load', function() {
+window.addEventListener('DOMContentLoaded', function() {
+    var greetBtn = document.getElementById('greetBtn');
+    if (greetBtn) {
+        greetBtn.addEventListener('click', function() {
+            var greetMsg = document.getElementById('greetMsg');
+            if (greetMsg) {
+                greetMsg.textContent = 'Have a great day!';
+            }
+        });
+    }
+
+    // Matrix rain effect
     const canvas = document.getElementById('matrix-canvas');
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
@@ -12,7 +22,8 @@ window.addEventListener('load', function() {
     const letters = 'アァイィウヴエェオカガキギクグケゲコゴサザシジスズセゼソゾタダチッヂヅテデトドナニヌネノハバパヒビピフブプヘベペホボポマミムメモヤユヨラリルレロワヲンABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     const fontSize = 18;
     let columns = Math.floor(canvas.width / fontSize);
-    let drops = Array(columns).fill(1);
+    // Randomize initial drop positions for each column
+    let drops = Array.from({length: columns}, () => Math.floor(Math.random() * canvas.height / fontSize));
 
     function draw() {
         ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
@@ -28,11 +39,14 @@ window.addEventListener('load', function() {
             drops[i]++;
         }
     }
-    setInterval(draw, 50);
+    let intervalId = setInterval(draw, 50);
 
     window.addEventListener('resize', function() {
+        clearInterval(intervalId);
         resizeCanvas();
         columns = Math.floor(canvas.width / fontSize);
-        drops = Array(columns).fill(1);
+        // Randomize initial drop positions for each column on resize
+        drops = Array.from({length: columns}, () => Math.floor(Math.random() * canvas.height / fontSize));
+        intervalId = setInterval(draw, 50);
     });
 });
