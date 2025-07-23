@@ -69,25 +69,3 @@ nav a {
 nav a:hover {
     color: #007f0e;
 }
-button {
-    padding: 10px 24px;
-    border: none;
-    border-radius: 6px;
-    background: #00ff41;
-    color: #0f0f0f;
-    font-size: 1rem;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: background 0.2s, color 0.2s;
-    box-shadow: 0 0 8px #00ff41;
-}
-button:hover {
-    background: #007f0e;
-    color: #00ff41;
-}
-#greetMsg {
-    margin-top: 18px;
-    color: #00ff41;
-    font-size: 1.1rem;
-    text-shadow: 0 0 6px #00ff41;
-}
