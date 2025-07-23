@@ -20,7 +20,7 @@ window.addEventListener('DOMContentLoaded', function() {
         ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         ctx.font = fontSize + 'px Courier New';
-        ctx.fillStyle = '#00ff41';
+        ctx.fillStyle = 'rgba(0, 255, 65, .25)'; // 1 is fully opaque, lower values are more transparent
         for (let i = 0; i < drops.length; i++) {
             const text = letters[Math.floor(Math.random() * letters.length)];
             ctx.fillText(text, i * fontSize, drops[i] * fontSize);
