@@ -4,6 +4,10 @@ body {
     font-family: 'Courier New', Courier, monospace;
     background: #0f0f0f;
     color: #00ff41;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .container {
     max-width: 500px;
