@@ -1,13 +1,4 @@
 window.addEventListener('DOMContentLoaded', function() {
-    var greetBtn = document.getElementById('greetBtn');
-    if (greetBtn) {
-        greetBtn.addEventListener('click', function() {
-            var greetMsg = document.getElementById('greetMsg');
-            if (greetMsg) {
-                greetMsg.textContent = 'Have a great day!';
-            }
-        });
-    }
 
     // Matrix rain effect
     const canvas = document.getElementById('matrix-canvas');
