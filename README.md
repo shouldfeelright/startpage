@@ -1,1 +1,0 @@
-![Follow the white rabbit.](https://i.gifer.com/NvI.gif)
